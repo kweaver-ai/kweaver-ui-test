@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Test output
+screenshots/
+!screenshots/.gitkeep
+reports/
+!reports/.gitkeep
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# agent-browser
+.agent-browser/
+browser-data/
