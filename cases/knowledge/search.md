@@ -1,6 +1,6 @@
 ---
 module: knowledge
-name: 知识库搜索功能
+name: 业务知识网络搜索
 tags: [regression]
 priority: p1
 preconditions:
@@ -12,7 +12,7 @@ preconditions:
 ## 步骤
 
 1. 前置操作：执行登录流程（参考 `auth/login.md`）
-2. 导航到知识库列表页 `{{BASE_URL}}/knowledge`
+2. 导航到知识库列表页 `{{BASE_URL}}/vega/ontology`
 3. 等待页面加载完成
 4. 找到搜索输入框
 5. 在搜索框中输入关键词 `测试`
