@@ -1,12 +1,12 @@
 ---
-module: knowledge
+module: bkn
 name: 业务知识网络搜索
 tags: [regression]
 priority: p1
 preconditions:
   - 系统已部署且可访问
   - 用户已登录
-  - 知识库列表中至少存在一条数据
+  - 业务知识网络列表中至少存在一条数据
 ---
 
 ## 步骤

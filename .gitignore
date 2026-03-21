@@ -2,15 +2,9 @@
 node_modules/
 
 # Environment
-.env
 .env.local
 .env.*.local
-
-# Test output
-screenshots/
-!screenshots/.gitkeep
-reports/
-!reports/.gitkeep
+.env
 
 # OS
 .DS_Store

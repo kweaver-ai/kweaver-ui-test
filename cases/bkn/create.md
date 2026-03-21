@@ -1,5 +1,5 @@
 ---
-module: knowledge
+module: bkn
 name: 创建业务知识网络
 tags: [regression, e2e]
 priority: p1
