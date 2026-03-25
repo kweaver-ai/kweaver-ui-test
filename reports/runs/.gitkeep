@@ -1,0 +1,3 @@
+# runs/ directory
+# JSON 运行记录存放在此目录
+# 文件格式：YYYY-MM-DD-HHmm.json

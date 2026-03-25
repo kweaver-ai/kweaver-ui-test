@@ -17,3 +17,8 @@ Thumbs.db
 # agent-browser
 .agent-browser/
 browser-data/
+
+# Session files (contain auth tokens — never commit)
+# agent-browser stores these at ~/.agent-browser/sessions/ automatically
+
+# Top-level screenshots/ dir (legacy — screenshots now live inside reports/runs/{run_id}/screenshots/)

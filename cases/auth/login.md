@@ -1,26 +1,35 @@
 ---
 module: auth
-name: 用户登录流程
-tags: [smoke, regression]
+name: 用户登录（Session Seed）
+tags: [smoke]
 priority: p0
+requires_session: false
+screenshots:
+  - after_login
 preconditions:
   - 系统已部署且可访问
-  - 拥有有效的测试账号
+  - 环境变量 TEST_USER / TEST_PASSWORD 已配置
 ---
+
+## 说明
+
+此用例是所有需要登录态用例的 **Session Seed**。
+执行后 agent-browser 通过 `AGENT_BROWSER_SESSION_NAME` 自动持久化登录态，
+后续用例无需重新执行登录。
 
 ## 步骤
 
-1. 打开登录页面 `{{BASE_URL}}`
-2. 等待页面加载完成
-3. 截图记录登录页面初始状态
-4. 在「用户名」输入框中输入 `{{TEST_USER}}`
-5. 在「密码」输入框中输入 `{{TEST_PASSWORD}}`
-6. 点击「登录」按钮
-7. 等待页面跳转完成
+- 导航到登录页 `{{BASE_URL}}/login`
+- 等待页面加载完成
+  - assert: 页面出现用户名输入框
+  - assert: 页面出现密码输入框
+- 在用户名输入框中输入 `{{TEST_USER}}`
+- 在密码输入框中输入 `{{TEST_PASSWORD}}`
+- 点击「登录」按钮
+- 等待页面跳转完成 <!-- screenshot: after_login -->
+  - assert: 当前 URL 不包含 `/login`
+  - assert: 页面出现用户名或用户头像，表明已登录
 
-## 预期结果
+## 最终验证
 
-- 页面成功跳转到仪表盘或首页
-- 页面显示用户名或欢迎信息
-- 无控制台 JS 报错
-- 截图记录登录后状态
+- 无 JS 控制台 error
